@@ -2,7 +2,19 @@
 
 ### Step 1.
 
-Create an s3 bucket called 'github-s3-example-tf-state' to manage your terraform state
+Create an s3 bucket to manage your terraform state. Update the s3 bucket name located in terraform.tf file
+from "your-s3-terraform-state-bucket-here" to the name of your bucket. See below:
+
+```
+terraform {
+  backend "s3" {
+    bucket = "your-s3-terraform-state-bucket-here"       # You need to change this to your bucket name
+    key    = "s3_proxy_github_example/terraform.tfstate"
+    region = "eu-west-1"
+  }
+}
+
+```
 
 ### Step 2.
 

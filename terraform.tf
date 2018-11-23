@@ -7,7 +7,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "github-s3-example-tf-state"
+    bucket = "your-s3-terraform-state-bucket-here"       # You need to change this to your bucket name
     key    = "s3_proxy_github_example/terraform.tfstate"
     region = "eu-west-1"
   }
@@ -23,8 +23,9 @@ module "s3-proxy-gateway" {
 
 
 # ----------------------------------------------------------------------------------------------------------------
-# Step 1. - Create an s3 bucket called 'github-s3-example-tf-state' to manage your terraform state
-#
+# Step 1. - Create an s3 bucket to manage your terraform state. Update the s3 bucket name located in terraform.tf file (this file) 
+#         - from "your-s3-terraform-state-bucket-here" to the name of your bucket.
+#        
 # ----------------------------------------------------------------------------------------------------------------
 
 
